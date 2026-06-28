@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Ashbringer — Paladin vs the Scourge</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="game"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="bars">
+          <div class="bar-row">
+            <span class="bar-label">HP</span>
+            <div class="bar"><div id="hp-fill" class="bar-fill hp"></div><span id="hp-text" class="bar-text"></span></div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">FAITH</span>
+            <div class="bar"><div id="faith-fill" class="bar-fill faith"></div><span id="faith-text" class="bar-text"></span></div>
+          </div>
+          <div class="bar-row xp-row">
+            <span class="bar-label">LV <span id="level">1</span></span>
+            <div class="bar xp"><div id="xp-fill" class="bar-fill xp"></div></div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><span id="score">0</span><label>SCORE</label></div>
+          <div class="stat"><span id="wave">1</span><label>WAVE</label></div>
+          <div class="stat combo-stat"><span id="combo">x1</span><label>COMBO</label></div>
+        </div>
+      </div>
+
+      <div id="wave-banner" class="wave-banner"></div>
+
+      <div class="ability-bar">
+        <div class="ability" id="ab-melee"><kbd>LMB</kbd><span>Smite</span></div>
+        <div class="ability" id="ab-nova"><kbd>SPACE</kbd><span>Holy Nova</span></div>
+        <div class="ability" id="ab-consecrate"><kbd>RMB / Q</kbd><span>Consecrate</span></div>
+        <div class="ability" id="ab-dash"><kbd>SHIFT</kbd><span>Dash</span></div>
+      </div>
+    </div>
+
+    <!-- Start screen -->
+    <div id="start-screen" class="overlay">
+      <div class="overlay-inner">
+        <h1 class="title">ASHBRINGER</h1>
+        <p class="subtitle">A Paladin stands alone against the Scourge.</p>
+        <div class="how-to">
+          <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</div>
+          <div><kbd>Mouse</kbd> Aim</div>
+          <div><kbd>LMB</kbd> Smite (melee)</div>
+          <div><kbd>SPACE</kbd> Holy Nova (AoE)</div>
+          <div><kbd>RMB</kbd>/<kbd>Q</kbd> Consecrate ground</div>
+          <div><kbd>SHIFT</kbd> Holy Dash</div>
+        </div>
+        <button id="start-btn" class="btn">BEGIN THE CRUSADE</button>
+        <p class="hint">Survive the waves. Level up. Purge them all.</p>
+      </div>
+    </div>
+
+    <!-- Level up screen -->
+    <div id="levelup-screen" class="overlay hidden">
+      <div class="overlay-inner">
+        <h2 class="levelup-title">DIVINE FAVOR</h2>
+        <p class="subtitle">Choose a blessing</p>
+        <div id="upgrade-cards" class="upgrade-cards"></div>
+      </div>
+    </div>
+
+    <!-- Game over screen -->
+    <div id="gameover-screen" class="overlay hidden">
+      <div class="overlay-inner">
+        <h1 class="title gameover">YOU HAVE FALLEN</h1>
+        <div class="final-stats">
+          <div class="stat-big"><span id="final-score">0</span><label>FINAL SCORE</label></div>
+          <div class="final-row">
+            <div><span id="final-wave">0</span><label>Waves</label></div>
+            <div><span id="final-kills">0</span><label>Purged</label></div>
+            <div><span id="final-level">0</span><label>Level</label></div>
+          </div>
+          <div id="best-score" class="best"></div>
+        </div>
+        <button id="restart-btn" class="btn">RISE AGAIN</button>
+      </div>
+    </div>
+
+    <div id="loading" class="overlay"><div class="overlay-inner"><h2 class="loading-text">Forging the world…</h2></div></div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
