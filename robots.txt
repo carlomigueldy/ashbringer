@@ -11,4 +11,4 @@ Allow: /
 User-agent: Twitterbot
 Allow: /
 
-Sitemap: https://ashbringer.vercel.app/sitemap.xml
+Sitemap: https://ashbringer.carlomigueldy.dev/sitemap.xml
