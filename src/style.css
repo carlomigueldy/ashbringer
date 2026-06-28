@@ -268,8 +268,37 @@ kbd {
   transition: box-shadow 0.15s ease;
 }
 
+.attribution {
+  margin-top: 22px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+.attribution a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(242, 193, 78, 0.4);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.attribution a:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
+
+#credit-badge {
+  position: absolute;
+  bottom: 10px; right: 14px;
+  z-index: 15;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(242, 193, 78, 0.55);
+  text-decoration: none;
+  pointer-events: auto;
+  text-shadow: 0 1px 2px #000;
+  transition: color 0.15s ease;
+}
+#credit-badge:hover { color: var(--gold-bright); }
+
 @media (max-width: 640px) {
   .ability { width: 60px; height: 54px; }
   .stats { gap: 10px; }
   .stat span { font-size: 20px; }
+  #credit-badge { font-size: 10px; }
 }
