@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8f6ff"/>
+      <stop offset="1" stop-color="#9fe8ff"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="1" stop-color="#8a6a1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#0a0a12"/>
+  <circle cx="32" cy="30" r="20" fill="#9fe8ff" opacity="0.12"/>
+  <!-- blade -->
+  <polygon points="32,8 36,12 36,40 32,46 28,40 28,12" fill="url(#b)"/>
+  <!-- guard -->
+  <rect x="20" y="40" width="24" height="5" rx="2" fill="url(#g)"/>
+  <!-- hilt -->
+  <rect x="30" y="45" width="4" height="9" fill="url(#g)"/>
+  <circle cx="32" cy="56" r="3" fill="url(#g)"/>
+</svg>

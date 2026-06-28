@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Social / preview crawlers (explicitly welcomed)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+Sitemap: https://ashbringer.vercel.app/sitemap.xml
